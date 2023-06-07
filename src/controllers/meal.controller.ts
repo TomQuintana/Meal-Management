@@ -1,11 +1,11 @@
 
 const test = (req: any, res: any) => {
   
-   res.json({
+  res.json({
     msg: 'Test'
   });
-}
+};
 
 export {
   test
-}
+};

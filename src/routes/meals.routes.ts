@@ -1,7 +1,7 @@
-import express, { Router } from 'express'
-import { test } from '../controllers/meal.controller'
+import express, { Router } from 'express';
+import { test } from '../controllers/meal.controller';
 
-const router = express.Router()
+const router = express.Router();
 
 router.get('/register', test);
 
