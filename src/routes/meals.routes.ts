@@ -1,13 +1,15 @@
-import express, { Router } from 'express';
-import { test } from '../controllers/meal.controller';
+import express from 'express';
+import { registerMeal } from '../controllers/meal.controller';
 
 const router = express.Router();
 
-router.get('/register', test);
+router.post('/register', registerMeal);
+
+// Docs
 /**
    * @swagger
    * /register:
-   *   get:
+   *   post:
    *     description: Register a new meals
    *     responses:
    *       200:
