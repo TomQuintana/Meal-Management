@@ -1,11 +1,18 @@
+import { Request, Response } from 'express';
+import mealModel from '../routes/models/meal.model';
 
-const test = (req: any, res: any) => {
+const registerMeal = (req: Request, res: Response) => {
+  console.log(req.body );
+
+  const mealData = new mealModel(req.body);
+  console.log(mealData);
+  
   
   res.json({
-    msg: 'Test'
+    msg: 'register meal'
   });
 };
 
 export {
-  test
+  registerMeal
 };
