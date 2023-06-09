@@ -1,8 +1,20 @@
 import { Schema, model } from 'mongoose';
-import dateParse from '../helpers/dateParse';
 
-const MealSchema = new Schema({
+interface IUser {
+  name: string;
+  category: string;
+  stock: number;
+  use?: boolean;
+  bowl?: string;
+  date?: Date;
+}
+
+const MealSchema = new Schema<IUser>({
   name: { 
+    type: String, 
+    required: true 
+  },
+  category: { 
     type: String, 
     required: true 
   },
@@ -19,7 +31,7 @@ const MealSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now().toPrecision(),
+    default: Date.now().toFixed(),
   }, 
 });
 
