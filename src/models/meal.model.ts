@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import dateParse from '../helpers/dateParse';
 
 const MealSchema = new Schema({
   name: { 
@@ -18,7 +19,7 @@ const MealSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now(),
+    default: Date.now().toPrecision(),
   }, 
 });
 

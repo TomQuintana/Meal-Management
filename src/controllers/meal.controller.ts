@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import mealModel from '../routes/models/meal.model';
+import mealModel from '../models/meal.model';
 
 const registerMeal = (req: Request, res: Response) => {
   console.log(req.body );
