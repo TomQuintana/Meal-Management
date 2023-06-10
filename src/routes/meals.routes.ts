@@ -13,6 +13,5 @@ router.post('/register', registerMeal);
    *     description: Register a new meals
    *     responses:
    *       200:
-   *         description: hello world
    */
 export default router;
