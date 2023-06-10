@@ -2,3 +2,5 @@
 *package-lock.json
 *.env
 *notas.md
+*.html
+*coverage
