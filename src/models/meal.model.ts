@@ -35,4 +35,4 @@ const MealSchema = new Schema<IUser>({
   }, 
 });
 
-export default model('MealModel', MealSchema);
+export default model('Meals-Stored', MealSchema);
