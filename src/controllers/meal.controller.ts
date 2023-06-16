@@ -36,16 +36,50 @@ const registerMeal = async (req: Request, res: Response) => {
   
 };
 
-// updated 
+const updatedMeal = async (req: Request, res: Response) => {
+  
+  const {id} = req.params;
+  const {stock, use, bowl} = req.body;
+
+  const data = {
+    stock,
+    use,
+    bowl
+  };
+
+  try {
+    
+    const mealForUpdated = await Meal.findByIdAndUpdate(id, data, {new: true});
+    const mealSave = await mealForUpdated?.save();
+
+    return res.status(200).json({
+      mealSave
+    });
+
+  } catch (error) {
+    res.status(500).json({ 
+      error: 'Meal Not Found'
+    });
+  }
+  
+};
 
 // deleted
 
-// get all
+const obtainMeals = async ( req: Request, res: Response) => {
+  
+  const meals = await Meal.find(); 
+  return res.status(200).json({
+    meals
+  });
+};
 
 // filters
 
 // list of future buy
 
 export {
-  registerMeal
+  registerMeal,
+  obtainMeals,
+  updatedMeal
 };

@@ -1,9 +1,11 @@
 import express from 'express';
-import { registerMeal } from '../controllers/meal.controller';
+import { obtainMeals, registerMeal, updatedMeal } from '../controllers/meal.controller';
 
 const router = express.Router();
 
 router.post('/register', registerMeal);
+router.get('/all', obtainMeals);
+router.put('/update/:id', updatedMeal);
 
 // Docs
 /**
