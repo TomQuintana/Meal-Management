@@ -5,7 +5,7 @@ import swaggerUI from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import routesMeal from './src/routes/meals.routes';
 import { options } from './src/docs/swaggerOptions';
-import conectarDB from './src/confif/db';
+import conectarDB from './src/config/db';
 
 const app = express();
 app.use(express.json());
