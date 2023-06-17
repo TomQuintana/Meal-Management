@@ -7,6 +7,7 @@ const registerMeal = async (req: Request, res: Response) => {
   const mealData = new Meal(req.body);
 
   const existName = await Meal.findOne({name}); 
+  
    
   if (existName) {
     return res.status(400).json({
@@ -64,8 +65,6 @@ const updatedMeal = async (req: Request, res: Response) => {
   
 };
 
-// deleted
-
 const obtainMeals = async ( req: Request, res: Response) => {
   
   const meals = await Meal.find(); 
@@ -78,8 +77,29 @@ const obtainMeals = async ( req: Request, res: Response) => {
 
 // list of future buy
 
+// deleted
+const deleteMeals = async (req: Request, res: Response) => {
+  const {id} = req.params;
+  console.log(id);
+  
+
+  try {
+    const meals = await Meal.findByIdAndDelete(id);
+    console.log(meals);
+
+    return res.status(200).json({
+      msg: 'Meals deleted'
+    });
+  } catch (error) {
+    res.status(500).json({ 
+      error: 'Meal Not Found'
+    });
+  }
+};
+
 export {
   registerMeal,
   obtainMeals,
-  updatedMeal
+  updatedMeal,
+  deleteMeals
 };
