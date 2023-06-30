@@ -1,7 +1,7 @@
 # This proyect is oriented to Food Administration
 
 ## Build with:
-- ![JavaScript](https://es.wikipedia.org/wiki/Archivo:JavaScript-logo.png) 
+- ![JavaScript](https://jherax.files.wordpress.com/2018/08/javascript_logo.png?w=232&zoom=2) 
 - Node
 - Typescript
 - Express 
